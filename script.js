@@ -1,6 +1,6 @@
 var totalImage;
 var currentIndex;
-var dir = "/image/"
+var dir = "./image/"
 
 var pageLoad = {
 imgData: "5",
