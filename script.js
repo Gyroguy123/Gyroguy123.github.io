@@ -1,5 +1,6 @@
 var totalImage;
 var currentIndex;
+var dir = "/image/"
 
 var pageLoad = {
 imgData: "5",
@@ -8,7 +9,7 @@ slides: "5",
 
 init: function () {
 $.ajax({
-url: "./image/",
+url: dir,
 async: false,
 success: function (data) {
 pageLoad.imgData = data.split('\n');
