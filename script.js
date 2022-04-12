@@ -8,7 +8,7 @@ slides: "5",
 
 init: function () {
 $.ajax({
-url: "./images/",
+url: "./image/",
 async: false,
 success: function (data) {
 pageLoad.imgData = data.split('\n');
