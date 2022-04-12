@@ -1,7 +1,6 @@
 var totalImage;
 var currentIndex;
 var dir = "./image/"
-<script src = "/jquery.js/"> </script>
 
 var pageLoad = {
 imgData: "5",
