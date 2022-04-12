@@ -2,6 +2,7 @@ var totalImage;
 var currentIndex;
 var dir = "./image/"
 
+
 var pageLoad = {
 imgData: "5",
 pagePrefix: "Null",
