@@ -1,0 +1,37 @@
+<head>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> </script>
+
+<style src="text/css">
+.navBtn {
+padding: 5px 10px;
+background-color: blue;
+font-weight: 1000;
+color: white;
+}
+
+div {
+border: 1px solid black;
+padding: 15px;
+width: 90%;
+text-align: center;
+}
+</style>
+</head>
+
+<body>
+<div id="imgContainer">
+<img id="image" />
+</div>
+
+<div>
+<button class="navBtn" onclick="previous()">
+<< Previous</button>
+<button class="navBtn" onclick="next()">Next >></button>
+<br><br>
+<button onclick="pageLoad.init()">Update Image </button>
+</div>
+
+<script src = "script.js"></script>
+</body>
+
+</html>
