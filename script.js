@@ -11,6 +11,7 @@ slides: "5",
 init: function () {
 $.ajax({
 url: dir,
+method: 'POST',
 async: false,
 success: function (data) {
 pageLoad.imgData = data.split('\n');
