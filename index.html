@@ -1,99 +1,3 @@
-<!--<!DOCTYPE html>
-<head>
-<script src=".\jquery.js"></script>
-
-<style src="text/css">
-.navBtn {
-padding: 5px 10px;
-background-color: blue;
-font-weight: 1000;
-color: white;
-}
-
-div {
-border: 1px solid black;
-padding: 15px;
-width: 90%;
-text-align: center;
-}
-</style>
-</head>
-
-<body>
-<div id="imgContainer">
-<img id="image" />
-</div>
-
-<div>
-<button class="navBtn" onclick="previous()">
-<< Previous</button>
-<button class="navBtn" onclick="next()">Next >></button>
-<br><br>
-<button onclick="pageLoad.init()">Update Image </button>
-</div>
-
-<script type = "text/javascript">
-var totalImage;
-var currentIndex;
-var dir = "./image";
-
-
-var pageLoad = {
-imgData: "5",
-pagePrefix: "Null",
-slides: "5",
-
-init: function () {
-$.ajax({
-url: dir,
-async: false,
-success: function (data) {
-pageLoad.imgData = data.split('\n');
-totalImage = pageLoad.imgData.length;
-currentIndex = 0;
-changeImg();
-}
-});
-}
-};
-pageLoad.init();
-
-function changeImg() {
-document.getElementById("image").setAttribute("src", "./img/" + pageLoad.imgData[currentIndex].split(' ')[0]);
-setTimeout(function () {
-next();},
-pageLoad.imgData[currentIndex].split('')[1]);
-}
-
-function previous() {
-if (currentIndex == 0) {
-currentIndex = totalImage - 1;
-} else {
-currentIndex--;
-}
-changeImg();
-};
-
-function next() {
-if (currentIndex == totalImage - 1) {
-currentIndex = 0;
-} else {
-currentIndex++;
-}
-changeImg();
-};
-
-setTimeout(function () {
-next();
-}, 3000);
-</script>
-<script>
-$(document).ready(function(){
-    alert("jQuery Works")
-});
-</script>
-</body>
-</html>-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -101,7 +5,7 @@ $(document).ready(function(){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Gallery</title>
 
-    <!-- CSS Stylesheets -->
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="styles.css">
 
 </head>
@@ -109,7 +13,7 @@ $(document).ready(function(){
 
     <div class="carousel-container">
 
-<!-- Images folder should be in the same level as that of index.html -->
+<!-- Load Images from folder -->
 
         <div class="mySlides fade">
           <img src="image\pic1.png" style="width:50%" alt = "Image 1"><br>
@@ -140,7 +44,7 @@ $(document).ready(function(){
           </div>
 
           <div class="mySlides fade">
-            <img src="image\pic5.png" style="width:50%" alt = "Image 5"><br>
+            <img src="image\pic5.PNG" style="width:50%" alt = "Image 5"><br>
 			<br>
 			<br>
             <div class="text">Pic 5 </div>
