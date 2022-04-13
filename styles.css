@@ -1,6 +1,6 @@
   * {box-sizing: border-box}
 body {font-family: Verdana, sans-serif; margin:0}
-.mySlides {display: none; text-align: center; width: 500px; height: 500px;}
+.mySlides {display: none; text-align: center; width: auto; height: auto;}
 img {vertical-align: middle; width: 400px; height: 400px;}
 
 /* Carousel container */
