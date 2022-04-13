@@ -1,12 +1,4 @@
-@-webkit-keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
 
-@keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
 
 var imgIndex = 1;
 var timer = null;
