@@ -1,5 +1,3 @@
-
-
 var imgIndex = 1;
 var timer = null;
 showImg(imgIndex);
