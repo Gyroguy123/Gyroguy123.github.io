@@ -14,7 +14,7 @@ function currentSlide(n) {
 
 function showImg(n) {
   var i;
-  var slides = document.getElementsByClassName("mySlides");
+  var slides = document.getElementsByClassName("mySlides fade");
   if (n==undefined){n = ++imgIndex}
   if (n > slides.length) {imgIndex = 1}
   if (n < 1) {imgIndex = slides.length}
