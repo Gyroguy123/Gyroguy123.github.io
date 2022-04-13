@@ -18,7 +18,7 @@ function showImg(n) {
   if (n==undefined){n = ++imgIndex}
   if (n > slides.length) {imgIndex = 1}
   if (n < 1) {imgIndex = slides.length}
-  for (i = 0; i < slides.length+1; i++) {
+  for (i = 0; i < slides.length; i++) {
       slides[i].style.display = "none";
   }
 
