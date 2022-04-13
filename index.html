@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<head>
+<!--<head>
 <script src = "https://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript">> </script>
 
 <style src="text/css">
@@ -89,5 +89,101 @@ next();
 </script>
 </body>
 
+-->
+<head>
+<script
 
+src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.
+
+1/jquery.min.js"></script>
+
+<style src="text/css">
+.navBtn {
+padding: 5px 10px;
+background-color: red;
+font-weight: 1000;
+color: white;
+}
+
+div {
+border: 2px solid black;
+padding: 10px;
+width: 70%;
+text-align: center;
+}
+</style>
+</head>
+
+<body>
+<div id="imgContainer">
+<img id="image" />
+</div>
+<div>
+<button class="navBtn" onclick="previous()">
+<< Previous</button>
+<button class="navBtn" onclick="next
+
+()">Next >></button>
+<br>
+<button onclick="pageLoad.init
+
+()">Update Image </button>
+</div>
+
+<script type="text/javascript">
+var totalImage;
+var currentIndex;
+
+var pageLoad = {
+imgData: "5",
+pagePrefix: "Null",
+slides: "5",
+
+init: function () {
+$.ajax({
+url: "./images.txt",
+async: false,
+success: function (data) {
+pageLoad.imgData = data.split('\n');
+totalImage =pageLoad.imgData.length;
+currentIndex = 0;
+changeImg();
+}
+});
+}
+};
+pageLoad.init();
+
+function changeImg() {
+document.getElementById("image").setAttribute("src", "./img/" + pageLoad.imgData[currentIndex].split(' ')[0]);
+setTimeout(function () {
+next();
+}, 
+pageLoad.imgData[currentIndex].split(' ')[1]);
+}
+
+function previous() {
+if (currentIndex == 0) {
+currentIndex = totalImage - 1;
+} else {
+currentIndex--;
+}
+changeImg();
+};
+
+function next() {
+if (currentIndex == totalImage - 1) {
+currentIndex = 0;
+} else {
+currentIndex++;
+}
+changeImg();
+};
+
+setTimeout(function () {
+next();
+}, 3000);
+
+</script>
+</body>
 </html>
