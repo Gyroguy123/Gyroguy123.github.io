@@ -90,100 +90,79 @@ next();
 </body>
 
 -->
+<!DOCTYPE html>
+
+<html>
+
 <head>
-<script
 
-src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.
+<meta charset="UTF-8">
 
-1/jquery.min.js"></script>
+<title>JQuery Plugins</title>
 
-<style src="text/css">
-.navBtn {
-padding: 5px 10px;
-background-color: red;
-font-weight: 1000;
-color: white;
-}
+<link rel="stylesheet" href="styles/styles.css">
 
-div {
-border: 2px solid black;
-padding: 10px;
-width: 70%;
-text-align: center;
-}
-</style>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+
+integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 </head>
 
 <body>
-<div id="imgContainer">
-<img id="image" />
-</div>
-<div>
-<button class="navBtn" onclick="previous()">
-<< Previous</button>
-<button class="navBtn" onclick="next
 
-()">Next >></button>
-<br>
-<button onclick="pageLoad.init
+<div id="dummy"></div>
 
-()">Update Image </button>
-</div>
+<!-- Babel -->
 
-<script type="text/javascript">
-var totalImage;
-var currentIndex;
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-var pageLoad = {
-imgData: "5",
-pagePrefix: "Null",
-slides: "5",
+<!-- Jquery -->
 
-init: function () {
-$.ajax({
-url: "./images.txt",
-async: false,
-success: function (data) {
-pageLoad.imgData = data.split('\n');
-totalImage =pageLoad.imgData.length;
-currentIndex = 0;
-changeImg();
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Bootstrap -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+
+integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+
+crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+
+integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+
+crossorigin="anonymous"></script>
+
+<script src="js/carroussel.js"></script>
+
+<script>
+
+let options = {
+
+animation: 'fade',
+
+mode: 'auto',
+
+items: []
+
+};
+
+$.ajax({url: "gallery.json",
+
+success: function(result){
+
+options.items = data;
+
 }
+
 });
-}
-};
-pageLoad.init();
 
-function changeImg() {
-document.getElementById("image").setAttribute("src", "./img/" + pageLoad.imgData[currentIndex].split(' ')[0]);
-setTimeout(function () {
-next();
-}, 
-pageLoad.imgData[currentIndex].split(' ')[1]);
-}
-
-function previous() {
-if (currentIndex == 0) {
-currentIndex = totalImage - 1;
-} else {
-currentIndex--;
-}
-changeImg();
-};
-
-function next() {
-if (currentIndex == totalImage - 1) {
-currentIndex = 0;
-} else {
-currentIndex++;
-}
-changeImg();
-};
-
-setTimeout(function () {
-next();
-}, 3000);
+$('#dummy').carroussel(options);
 
 </script>
+
 </body>
+
+</html>
 </html>
